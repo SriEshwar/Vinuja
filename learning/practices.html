@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inner html</title>
+</head>
+<body>
+    <p id="test"></p>
+   <button onclick="display()">click</button>
+   <button onclick="alert('Hello')">click</button>
+    <!-- <button onclick="document.getElementById('test2').innerHTML=Date()"> Click Here</button> -->
+    <p id="test2"></p>
+   
+    <script>
+        let x=34;
+        x+=23;
+        document.getElementById("test").innerHTML="Value of x : "+x; 
+
+        function display(){
+            document.getElementById("test2").innerHTML=Date()
+        }
+    </script>
+</body>
+</html>
