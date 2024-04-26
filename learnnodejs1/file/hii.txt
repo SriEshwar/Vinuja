@@ -1,1 +1,0 @@
-Hello all! Welcome to learn Node js.
