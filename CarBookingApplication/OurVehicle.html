@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Booking</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 30px;
+    }
+
+    .car-details {
+      flex: 1;
+      margin-right: 150px;
+    }
+
+    .car-image {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .booking-details {
+      flex: 1;
+    }
+
+    .booking-details h2 {
+      margin-top: 0;
+    }
+
+    .booking-details input[type="number"] {
+      width: 100px;
+    }
+
+    .booking-details button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    .booking-details button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Car 1 Details -->
+  <div class="car-details">
+    <img class="car-image" src="car6.jpg" alt="Car 1">
+  </div>
+  <div class="booking-details">
+    <h2>Car Type: Sedan</h2>
+    <p>Number of Seats: 5</p>
+    <p>Price per Day: ₹2000</p>
+    <label for="days1">Number of Days:</label>
+    <input type="number" id="days1" name="days1" min="1" oninput="calculatePrice(2000, 'days1', 'totalPrice1')">
+    <p>Total Price: <span id="totalPrice1">₹0</span></p>
+    <button onclick="bookNow('Sedan')">Book Now</button>
+  </div>
+</div>
+
+<div class="container">
+  <!-- Car 2 Details -->
+  <div class="car-details">
+    <img class="car-image" src="car4.jpg" alt="Car 2">
+  </div>
+  <div class="booking-details">
+    <h2>Car Type: SUV</h2>
+    <p>Number of Seats: 7</p>
+    <p>Price per Day: ₹2500</p>
+    <label for="days2">Number of Days:</label>
+    <input type="number" id="days2" name="days2" min="1" oninput="calculatePrice(2500, 'days2', 'totalPrice2')">
+    <p>Total Price: <span id="totalPrice2">₹0</span></p>
+    <button onclick="bookNow('SUV')">Book Now</button>
+  </div>
+</div>
+
+<script>
+  function calculatePrice(pricePerDay, inputId, totalSpanId) {
+    var days = document.getElementById(inputId).value;
+    var totalPrice = pricePerDay * days;
+    document.getElementById(totalSpanId).innerText = "₹" + totalPrice;
+  }
+
+ 
+</script>
+
+</body>
+</html>
