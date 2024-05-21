@@ -1,0 +1,45 @@
+<h1>{{title}}</h1>
+<h1>{{getName()}}</h1>
+
+<!-- Event Binding -->
+<h1>clicked {{clickCount}} times</h1>
+<button (click)="clickMe()">Click me!</button>
+
+<!-- Structral directives -->
+<h1>ngFor Example</h1>
+<ul>
+    <li *ngFor="let movie of Movies">{{movie}}</li>
+</ul>
+
+
+<h1>ngIf Example</h1>
+<p *ngIf="true">Can you see the Screen?</p>
+<p *ngIf="false">Can you see the Screen?</p>
+<!-- <p *ngIf="screenVisible">Can you see the Screen?</p> -->
+
+
+<!-- 2 way binding -->
+<input type="checkbox" [(ngModel)]="screenVisible">
+<p *ngIf="screenVisible">Can you see the Screen?</p>
+
+
+<!-- Attribute Directives -->
+
+<p [ngClass]="['coloroftext','fontbig']">Practicing Attribute Directives</p>
+
+<!-- pipes -->
+<!-- Build in pipes -->
+
+<p>{{UserName | lowercase}}</p>
+<p>{{College | uppercase}}</p>
+<p>{{dateExample | date}}</p>
+
+<!-- parameterized pipes -->
+<p>{{Currency | currency : 'USD'}}</p>
+<p>{{CurrencyinRupees | currency : 'INR'}}</p>
+<p>{{dateExample | date:'short'}}</p>
+<p>{{dateExample | date:'long'}}</p>
+<p>{{dateExample | date:'MM-dd-yy'}}</p>
+
+<!-- custom pipe -->
+<p>{{custompipeExample | custompipe}}</p>
