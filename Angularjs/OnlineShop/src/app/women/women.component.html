@@ -1,0 +1,15 @@
+<!-- womens-category.component.html -->
+<div class="womens-category">
+    <div class="shoe-row" *ngFor="let row of shoes | slice:0:2">
+      <div class="shoe-card" *ngFor="let shoe of row">
+        <img [src]="shoe.image" [alt]="shoe.name">
+        <div class="shoe-details">
+          <h3>{{ shoe.name }}</h3>
+          <p>Price: {{ shoe.price | currency : 'INR'}}</p>
+          <p>Color: {{ shoe.color }}</p>
+          <button class="add-to-cart" (click)="addToCart(shoe)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

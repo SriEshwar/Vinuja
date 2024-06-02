@@ -1,0 +1,46 @@
+
+  
+  .home-content {
+   
+    padding-top: 0;
+  }
+  
+  .slide-image {
+   
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    background-color: white;
+  }
+  
+  .fixed-image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .image-row {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px; /* Space between the fixed image and the row of images */
+    padding: 10px;
+  }
+  
+  .image-row img {
+    width: 23%; /* Adjust width to fit four images in a row with some space around */
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+  }
+  
+  /* Hover Effects */
+  .image-row img:hover {
+    transform: scale(1.05); /* Scale up the image */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5); /* Increase the shadow */
+    border-color: orangered; /* Change border color */
+  }
+  
