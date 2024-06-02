@@ -1,0 +1,100 @@
+
+<h1>Data Binding</h1>
+
+    <h1>Types of Data Binding</h1>
+    <ul>
+        <li>One-Way Binding</li>
+        <li>Two-Way Binding</li>
+    </ul>
+
+
+    <!-- One-Way Binding -->
+    <h1>One-Way Binding</h1>
+    <p>Data flows in a single direction, either from the component to the view or from the view to the component.</p>
+    
+    <!-- Types of One-Way Binding -->
+   
+    <h1>Types of One-Way Binding</h1>
+
+    <!-- Component to view -->
+    <p>Note: The binding Given below ----- Component to view</p>
+    <ul>
+        <li>Interpolation</li>
+        <li>Property</li>
+        <li>Class</li>
+        <li>Style</li>
+        <li>Attribute</li>
+        <!-- view to componet -->
+        <li>Event</li>
+    </ul>
+
+    <!-- Interpolation Binding -->
+
+    <h1>Interpolation Binding</h1>
+    <p>Bind data from component to the view using &lbrace;&lbrace;expression &rbrace; &rbrace;.</p>
+    <h3>Example for Interpolation Binding</h3>
+    <p>Name: {{Name}}</p>
+    <p>College: {{CollegeName}}</p>
+
+
+    <!-- Syntax -->
+    <!-- Property Binding: [elementProperty]="componentProperty"
+    Style Binding: [style.cssProperty]="componentProperty" -->
+
+
+    <!-- Property Binding -->
+
+    <h1>Property Binding</h1>
+    <p>Used to bind component properties to element properties, attributes, or DOM properties.</p>
+    <h3>Example for Property Binding</h3>
+    <input [value]="userName" /><br><br>
+    <input [title]="tooltipMessage" />
+
+    <!-- Style Binding -->
+
+    <h1>Style Binding</h1>
+    <p>Style binding is used to set individual CSS properties directly on an element. This is useful for applying inline styles dynamically.</p>
+    <h3>Example for Style Binding</h3>
+    <p [style.color]="Fontcolor">Welcome to learn Style Binding</p>
+
+
+    <!-- Class Binding -->
+    <h1>Class Binding</h1>
+    <p>Adds or removes one or more CSS classes from an element based on component properties.</p>
+    <h3>Example for Class Binding</h3>
+    <p [class.Active]="isActive">Text color</p>
+
+
+
+<!-- Property binding binds directly to the property of the HTML element.
+Attribute binding binds to the attribute of the HTML element. -->
+
+
+ <!-- Attribute Binding -->
+ <h1>Attribute Binding</h1>
+ <p>Adds or removes one or more CSS classes from an element based on component properties.</p>
+ <h3>Example for Attribute Binding</h3>
+ <input type="text" [attr.value]="inputValue" />
+
+
+<!-- Event Binding-----view to componet -->
+<h1>Event Binding</h1>
+<p>Form of one-way binding because it flows data in one direction: from the template (view) to the component class (model).</p>
+<h3>Example for Event Binding</h3>
+<button (click)="onButtonClick()">Click Me</button>
+
+
+
+<!-- Two-Way DataBinding -->
+<h1>Two-Way DataBinding</h1>
+<h3>Example</h3>
+<input type="text" [(ngModel)]="firstName" />
+<p>Hello, {{ firstName }}!</p>
+
+
+
+
+
+
+
+  
