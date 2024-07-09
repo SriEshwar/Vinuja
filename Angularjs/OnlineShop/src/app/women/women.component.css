@@ -1,0 +1,85 @@
+
+
+.women-container {
+  display: flex;
+  align-items: flex-start; /* Ensures items align at the top */
+}
+
+.filter-container {
+  flex: 0 0 auto; /* Prevents flex container from growing or shrinking */
+  width: 250px; /* Adjust width as needed */
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  margin-right: 20px;
+}
+
+.content-container {
+  flex: 1; /* Allows content to grow and take up remaining space */
+}
+
+.womens-category {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* Align items at the start of the container */
+}
+
+.shoe-card {
+  width:30rem; /* Adjust width as per your design */
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.shoe-details {
+  padding: 10px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.size-options {
+ 
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.size-options span {
+ 
+  padding: 5px 10px;
+  margin: 0 5px;
+  border: 2px solid orangered;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: 800;
+}
+
+.size-options span.selected {
+  
+  background-color: orangered;
+  color: white;
+}
+
+.add-to-cart {
+
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: orangered;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.add-to-cart:hover {
+  background-color: darkred;
+}
+
+
+.app-footer {
+  margin-top: 20px;
+}

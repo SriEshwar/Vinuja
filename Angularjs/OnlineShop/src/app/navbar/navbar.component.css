@@ -1,0 +1,70 @@
+
+/* Navbar container */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+/* Logo */
+.navbar .logo p {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Navbar links container */
+.navbar-links {
+    display: flex;
+    gap: 15px;
+    padding-left:30rem;
+}
+
+/* Navbar links */
+.navbar-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    position: relative;
+    padding: 5px 10px;
+    font-size: large;
+}
+
+/* Cursor pointer for links */
+.navbar-links a {
+    cursor: pointer;
+}
+
+/* Hover effect for links */
+.navbar-links a:hover {
+    background-color: orangered;
+    border-radius: 4px;
+}
+
+/* Styling for the logo */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+/* Styling for the logo text */
+.logo p {
+    margin: 0;
+}
+
+/* Responsive design */
+/* 
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .navbar-links {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+} */

@@ -1,0 +1,96 @@
+.home-content {
+  padding-top: 0;
+}
+
+.slide-image {
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  background-color: white;
+}
+
+.fixed-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.image-row {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px; /* Space between the fixed image and the row of images */
+  padding: 10px;
+}
+
+.image-row img {
+  width: 20%; /* Adjust width to fit four images in a row with some space around */
+  height: auto;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+/* Hover Effects */
+.image-row img:hover {
+  transform: scale(1.05); /* Scale up the image */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Increase the shadow */
+  border-color: orangered; /* Change border color */
+}
+
+.order-summary {
+  border: 1px solid #e0e0e0;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.order-item {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.order-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.item-details {
+  flex-grow: 1;
+}
+
+.item-details h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.item-details p {
+  margin: 5px 0;
+}
+
+.cancel-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #d9534f;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cancel-button:hover {
+  background-color: #c9302c;
+}
+
+.delivered-message {
+  color: green;
+  font-weight: bold;
+}

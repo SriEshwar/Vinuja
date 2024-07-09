@@ -1,0 +1,16 @@
+<div class="order-success-container">
+  <h2>Order Placed Successfully!</h2>
+  <div *ngFor="let item of orderDetails.items" class="order-item">
+    <img [src]="item.image" [alt]="item.name">
+    <div class="item-details">
+      <h3>{{ item.name }}</h3>
+      <p>Price: {{ item.price | currency : 'INR' }}</p>
+      <p>Color: {{ item.color }}</p>
+      <p>Size: {{ item.size }}</p>
+      <p>Quantity: {{ item.quantity }}</p>
+    </div>
+  </div>
+  <h3>Total Amount: {{ orderDetails.totalAmount | currency : 'INR' }}</h3>
+  <p>Delivery Date: {{ orderDetails.deliveryDate | date : 'longDate' }}</p>
+  <button (click)="navigateHome()">Go to Home</button>
+</div>

@@ -1,0 +1,53 @@
+<!-- 
+<div class="mens-category">
+  <app-filter (filtersChanged)="applyFilters($event)"></app-filter>
+  <div class="shoe-row" *ngFor="let row of filteredShoes">
+    <div class="shoe-row" *ngFor="let row of shoes | slice:0:2">
+      <div class="shoe-card" *ngFor="let shoe of row">
+        <img [src]="shoe.image" [alt]="shoe.name" [style.width.px]="shoe.width" [style.height.px]="shoe.height">
+        <div class="shoe-details">
+          <h3>{{ shoe.name }}</h3>
+          <p>Price: {{ shoe.price | currency : 'INR' }}</p>
+          <p>Color: {{ shoe.color }}</p>
+          <div class="size-options">
+            <span *ngFor="let size of sizes" 
+                  [class.selected]="selectedSize[shoe.name] === size"
+                  (click)="selectSize(shoe.name, size)">
+              {{ size }}
+            </span>
+          </div>
+          <button class="add-to-cart" (click)="addToCart(shoe)">Add to Cart</button>
+        </div>
+      </div>
+      </div>
+
+  </div>
+  <app-footer></app-footer>
+  
+
+
+ 
+ -->
+
+ <div class="mens-category">
+  <app-filter (filtersChanged)="applyFilters($event)"></app-filter>
+  <div class="shoe-row" *ngFor="let row of filteredShoes">
+    <div class="shoe-card" *ngFor="let shoe of row">
+      <img [src]="shoe.image" [alt]="shoe.name" [style.width.px]="shoe.width" [style.height.px]="shoe.height">
+      <div class="shoe-details">
+        <h3>{{ shoe.name }}</h3>
+        <p>Price: {{ shoe.price | currency : 'INR' }}</p>
+        <p>Color: {{ shoe.color }}</p>
+        <div class="size-options">
+          <span *ngFor="let size of sizes" 
+                [class.selected]="selectedSize[shoe.name] === size"
+                (click)="selectSize(shoe.name, size)">
+            {{ size }}
+          </span>
+        </div>
+        <button class="add-to-cart" (click)="addToCart(shoe)">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+  <app-footer class="app-footer"></app-footer>
+</div>

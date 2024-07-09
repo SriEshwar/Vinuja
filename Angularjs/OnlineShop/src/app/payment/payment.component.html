@@ -1,0 +1,64 @@
+<div class="payment-container">
+    <h2>Payment</h2>
+    
+    <form [formGroup]="paymentForm" (ngSubmit)="onSubmit()">
+      <div class="form-group-radio">
+        <label>
+          <input type="radio" value="credit" (change)="onPaymentMethodChange('credit')" [checked]="selectedPaymentMethod === 'credit'">
+          Credit/Debit/ATM Card
+        </label>
+        <label>
+          <input type="radio" value="upi" (change)="onPaymentMethodChange('upi')" [checked]="selectedPaymentMethod === 'upi'">
+          UPI
+        </label>
+        <label>
+          <input type="radio" value="cod" (change)="onPaymentMethodChange('cod')" [checked]="selectedPaymentMethod === 'cod'">
+          Cash on Delivery
+        </label>
+      </div>
+  
+      <div *ngIf="selectedPaymentMethod === 'credit'" class="credit-form">
+        <div class="form-group">
+          <label for="cardNumber">Card Number</label>
+          <input id="cardNumber" formControlName="cardNumber" type="text" />
+          <div *ngIf="paymentForm.get('cardNumber')?.invalid && (paymentForm.get('cardNumber')?.dirty || paymentForm.get('cardNumber')?.touched)">
+            <small class="error" *ngIf="paymentForm.get('cardNumber')?.errors?.['required']">Card Number is required</small>
+            <small class="error" *ngIf="paymentForm.get('cardNumber')?.errors?.['pattern']">Card Number must be 16 digits</small>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="validThru">Valid Thru (MM/YY)</label>
+          <input id="validThru" formControlName="validThru" type="text" />
+          <div *ngIf="paymentForm.get('validThru')?.invalid && (paymentForm.get('validThru')?.dirty || paymentForm.get('validThru')?.touched)">
+            <small class="error" *ngIf="paymentForm.get('validThru')?.errors?.['required']">Valid Thru is required</small>
+            <small class="error" *ngIf="paymentForm.get('validThru')?.errors?.['pattern']">Valid Thru must be in MM/YY format</small>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="cvv">CVV</label>
+          <input id="cvv" formControlName="cvv" type="text" />
+          <div *ngIf="paymentForm.get('cvv')?.invalid && (paymentForm.get('cvv')?.dirty || paymentForm.get('cvv')?.touched)">
+            <small class="error" *ngIf="paymentForm.get('cvv')?.errors?.['required']">CVV is required</small>
+            <small class="error" *ngIf="paymentForm.get('cvv')?.errors?.['pattern']">CVV must be 3 digits</small>
+          </div>
+        </div>
+        <button type="submit" [disabled]="paymentForm.invalid">Pay ₹{{ totalAmount }}</button>
+      </div>
+  
+      <div *ngIf="selectedPaymentMethod === 'upi'" class="upi-form">
+        <div class="form-group">
+          <label for="upiId">UPI ID</label>
+          <input id="upiId" formControlName="upiId" type="text" />
+          <div *ngIf="paymentForm.get('upiId')?.invalid && (paymentForm.get('upiId')?.dirty || paymentForm.get('upiId')?.touched)">
+            <small class="error" *ngIf="paymentForm.get('upiId')?.errors?.['required']">UPI ID is required</small>
+          </div>
+        </div>
+        <button type="submit" [disabled]="paymentForm.invalid">Pay ₹{{ totalAmount }}</button>
+      </div>
+  
+      <div *ngIf="selectedPaymentMethod === 'cod'" class="cod-form">
+        <button type="submit">Place Order</button>
+      </div>
+    </form>
+  </div>
+  

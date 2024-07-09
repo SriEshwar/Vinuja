@@ -1,0 +1,79 @@
+<!-- 
+<div class="home-content">
+  <div class="slide-image">
+      <img src="assets/images/slider-image.png" alt="Slide 1" class="fixed-image">
+  </div>
+  <div class="image-row">
+      <img src="assets/images/image1.jpg" alt="Image 1" >
+      <img src="assets/images/image2.jpg" alt="Image 2" >
+      <img src="assets/images/image3.jpg" alt="Image 3" >
+      <img src="assets/images/image4.webp" alt="Image 4">
+  </div>
+</div>
+<app-footer></app-footer> 
+
+
+ -->
+
+
+ <!-- <div class="home-content">
+  <div *ngIf="orderPlaced" class="order-summary">
+    <h2>Order Summary</h2>
+    <div *ngFor="let item of orderDetails.items" class="order-item">
+      <img [src]="item.image" [alt]="item.name">
+      <div class="item-details">
+        <h3>{{ item.name }}</h3>
+        <p>Price: {{ item.price | currency : 'INR' }}</p>
+        <p>Color: {{ item.color }}</p>
+        <p>Size: {{ item.size }}</p>
+        <p>Quantity: {{ item.quantity }}</p>
+      </div>
+    </div>
+    <h3>Total Amount: {{ orderDetails.totalAmount | currency : 'INR' }}</h3>
+    <p>Delivery Date: {{ orderDetails.deliveryDate | date : 'longDate' }}</p>
+    <button *ngIf="cancelable" class="cancel-button" (click)="cancelOrder()">Cancel Order</button>
+    <p *ngIf="delivered" class="delivered-message">Your order has been delivered!</p>
+  </div>
+
+  <div *ngIf="!orderPlaced">
+    <div class="slide-image">
+      <img src="assets/images/slider-image.png" alt="Slide 1" class="fixed-image">
+    </div>
+    <div class="image-row">
+      <img src="assets/images/image1.jpg" alt="Image 1">
+      <img src="assets/images/image2.jpg" alt="Image 2">
+      <img src="assets/images/image3.jpg" alt="Image 3">
+      <img src="assets/images/image4.webp" alt="Image 4">
+    </div>
+  </div>
+</div>
+<app-footer></app-footer> -->
+<div class="home-content">
+  <div class="slide-image">
+    <img src="assets/images/slider-image.png" alt="Slide 1" class="fixed-image">
+  </div>
+  <div class="image-row">
+    <img src="assets/images/image1.jpg" alt="Image 1">
+    <img src="assets/images/image2.jpg" alt="Image 2">
+    <img src="assets/images/image3.jpg" alt="Image 3">
+    <img src="assets/images/image4.webp" alt="Image 4">
+  </div>
+  <div *ngIf="orderPlaced" class="order-summary">
+    <h2>Order Summary</h2>
+    <div *ngFor="let item of orderDetails.items" class="order-item">
+      <img [src]="item.image" [alt]="item.name" class="item-image">
+      <div class="item-details">
+        <h3>{{ item.name }}</h3>
+        <p>Price: {{ item.price | currency : 'INR' }}</p>
+        <p>Color: {{ item.color }}</p>
+        <p>Size: {{ item.size }}</p>
+        <p>Quantity: {{ item.quantity }}</p>
+      </div>
+    </div>
+    <h3>Total Amount: {{ orderDetails.totalAmount | currency : 'INR' }}</h3>
+    <p>Delivery Date: {{ orderDetails.deliveryDate | date : 'longDate' }}</p>
+    <button *ngIf="cancelable" class="cancel-button" (click)="cancelOrder()">Cancel Order</button>
+    <p *ngIf="delivered" class="delivered-message">Your order has been delivered!</p>
+  </div>
+</div>
+<app-footer></app-footer>

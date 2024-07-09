@@ -1,0 +1,58 @@
+<div class="checkout-container">
+  <h2>Checkout</h2>
+  
+  <form *ngIf="!deliveryDetails" [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input id="name" formControlName="name" type="text" />
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone Number</label>
+      <input id="phone" formControlName="phone" type="text" />
+    </div>
+    <div class="form-group">
+      <label for="address">Address</label>
+      <input id="address" formControlName="address" type="text" />
+    </div>
+    <div class="form-group">
+      <label for="city">City</label>
+      <input id="city" formControlName="city" type="text" />
+    </div>
+    <div class="form-group">
+      <label for="pincode">Pincode</label>
+      <input id="pincode" formControlName="pincode" type="text" />
+    </div>
+    <div class="form-group">
+      <label for="landmark">Landmark (Optional)</label>
+      <input id="landmark" formControlName="landmark" type="text" />
+    </div>
+    <button type="submit">Save</button>
+  </form>
+
+  <div *ngIf="deliveryDetails">
+    <h3>Delivery Details</h3>
+    <p><strong>Name:</strong> {{ deliveryDetails.name }}</p>
+    <p><strong>Address:</strong> {{ deliveryDetails.address }}, {{ deliveryDetails.city }}, {{ deliveryDetails.pincode }}</p>
+    <p><strong>Phone:</strong> {{ deliveryDetails.phone }}</p>
+    <button class="edit-button" (click)="editDetails()">Edit</button>
+  </div>
+
+  <div *ngIf="items.length > 0">
+    <h3>Cart Items</h3>
+    <div *ngFor="let item of items" class="cart-item">
+      <img [src]="item.image" [alt]="item.name">
+      <div class="item-details">
+        <h3>{{ item.name }}</h3>
+        <p>Price: {{ item.price | currency : 'INR' }}</p>
+        <p>Color: {{ item.color }}</p>
+        <p>Size: {{ item.size }}</p>
+        <p>Delivery Date: {{ item.deliveryDate | date: 'longDate' }}</p> 
+        <div class="quantity-controls">
+          <span>Quantity: {{ item.quantity }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button *ngIf="deliveryDetails" class="continue-button" (click)="continueToPayment()">Continue to Payment</button>
+</div>

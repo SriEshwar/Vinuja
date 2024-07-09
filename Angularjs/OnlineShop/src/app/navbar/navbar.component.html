@@ -1,0 +1,35 @@
+ <div class="navbar">
+    <div class="logo">
+        <p>ShoeStore</p>
+        
+
+          <!-- <div class="navbar-links">
+            <a routerLink="/home">Home</a>
+            <a routerLink="/women">Women</a>
+            <a routerLink="/men">Men</a>
+            <a routerLink="/login">Sign-In</a>
+            <a routerLink="/cart">Cart</a>
+               
+            </div>   -->
+
+            <div class="navbar-links">
+              <a *ngIf="authService.isAuthenticated()" routerLink="/home">Home</a>
+              <a *ngIf="authService.isAuthenticated()" routerLink="/women">Women</a>
+              <a *ngIf="authService.isAuthenticated()" routerLink="/men">Men</a>
+              <a *ngIf="authService.isAuthenticated()" routerLink="/cart">Cart</a>
+              <a (click)="logout()" *ngIf="isAuthenticated">Logout</a>
+              <a *ngIf="!authService.isAuthenticated()" routerLink="/login">Sign-In</a>
+            </div> 
+            
+        
+    </div>
+</div>
+<div>
+    <router-outlet></router-outlet>
+</div> 
+
+ 
+
+
+
+

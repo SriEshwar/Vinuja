@@ -1,0 +1,32 @@
+<div class="filter">
+    <h3>Filter</h3>
+    <div>
+      <h4>Names</h4>
+      <div *ngFor="let name of shoeNames">
+        <input type="checkbox" [value]="name" (change)="onNameChange($event)">
+        <label>{{ name }}</label>
+      </div>
+    </div>
+    <div>
+      <!-- <h4>Sizes</h4>
+      <div *ngFor="let size of sizes">
+        <input type="checkbox" [value]="size" (change)="onSizeChange($event)">
+        <label>{{ size }}</label>
+      </div> -->
+    </div>
+    <div>
+      <h4>Colors</h4>
+      <div *ngFor="let color of colors">
+        <input type="checkbox" [value]="color" (change)="onColorChange($event)">
+        <label>{{ color }}</label>
+      </div>
+    </div>
+    <div>
+      <h4>Prices</h4>
+      <div *ngFor="let priceRange of priceRanges">
+        <input type="checkbox" [value]="priceRange" (change)="onPriceChange($event)">
+        <label>{{ priceRange.label }}</label>
+      </div>
+    </div>
+  </div>
+  

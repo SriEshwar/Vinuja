@@ -1,0 +1,73 @@
+.container {
+    width: 300px;
+    margin-top: 100px;
+    margin-left: 30rem;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: white;
+  }
+  
+  form div {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+ 
+  input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 2px solid #0056b3;
+  }
+  
+  input:focus {
+    border-color: orangered;
+    outline: none; 
+  }
+  
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: orangered;
+  }
+  
+  .error {
+    color: red;
+    font-size: 1em;
+    font-weight: 800;
+  }
+  p{
+    font-weight: 800;
+  }
+  
+  a {
+    color: blue;
+    cursor: pointer;
+  }
+  a:focus{
+    color:orangered;
+  }
+  .error-message {
+    color: red;
+    margin-top: 10px;
+    font-weight: 900;
+  }
+  
+  
